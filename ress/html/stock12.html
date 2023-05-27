@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../images/icon-stock.png">
+    <title id="invTitle2">STOCK DE INVENTARIO
+    </title>
+</head>
+<body>
+    <section id="header">
+        <h1 id="invTitle">Stock</h1><button class="invTitle-button">Editar Nombre</button>
+        <h3><a href="./registros.html">Ir a Registro de Movimientos</h3></a>
+        <h3><a href="../../index.html">Ir a Lista de Inventarios</h3></a>
+    </section>
+    <section id="invent-form">
+        <div class="invent">
+            <div>
+                <h4>Producto</h4>
+                <input type="text" placeholder="Nombre y precio(opcional)" id="product">
+            </div>
+            
+            <div class="initstock">
+                <h4>Stock Inicial</h4>
+                <input type="text" value="" placeholder="Cantidad" id="stock" onchange="getTotal()">
+            </div>
+
+            <div>
+                <h4>Precio Costo</h4>
+                <input type="text" placeholder="Monto" id="cost">
+            </div>
+
+            <div>
+                <h4>Precio Venta</h4>
+                <input type="text" placeholder="Monto" id="sellPrice">
+            </div>
+            
+            <div>
+                <h4>Vencimiento</h4>
+                <input type="date" placeholder="Fecha" id="venc">
+            </div>
+
+            <div>
+                <h4>Vendidos</h4>
+                <input type="text" value="" placeholder="(Opcional)" id="sold" onchange="getTotal()">
+            </div>
+                <button class="text-center" onclick="addInventory()">Añadir</button>
+        </div>
+    </section>
+
+    <section id="invent-table">
+        <div class="table" >
+            <div class="d-flex-between">
+                <div class="titlediv">
+                    <h1>Inventario</h1>
+                </div>
+                <div id="actions">
+                    <span class="uploadBtn">Subir Datos(EXCEL/.CSV):</span>
+                    <input type="file" accept=".csv" id="fileInput">
+                    <input type="submit" value="Subir" onclick="uploadInventory(event)">
+                    <p></p>
+                    <button onclick="downloadInventory()">Descargar Base De Datos(EXCEL/.CSV)</button>
+                    <button id="actions" class="print" onclick="printData()">Descargar PDF-Imprimir</button>
+                    <button id="actions" class="clear" onclick="clearButton()">Borrar Todos</button>
+                </div>
+            </div>
+
+            <div class="table-responsive" id="allInventory">
+                <table width="100%" border="1" id="inventoryTable">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Vencimiento(Año-Mes-Dia)</th>
+                        <th>Stock Inicial</th>
+                        <th>Precio Costo</th>
+                        <th>Precio Venta</th>
+                        <th>Vendidos</th>
+                        <th>Ganancia</th>
+                        <th>Stock Final</th>
+                        <th id="actions">Acciones</th>
+                    </tr>
+                    <tr id="actions">
+                        <th id="actions" colspan="3">
+                            Ganancia Total...$
+                        </th>
+                        <td id="grandTotal" colspan="2" class="font-weight-bold"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html

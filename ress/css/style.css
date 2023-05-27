@@ -1,0 +1,278 @@
+/* Montserrat-fonts */
+@font-face{
+    font-family:Montserrat-Regular ;
+    src: url("../fonts/MontserratFonts/Montserrat-Regular.ttf");
+}
+@font-face{
+    font-family:Montserrat-Bold ;
+    src: url("../fonts/MontserratFonts/Montserrat-Bold.ttf");
+}
+@font-face{
+    font-family:Montserrat-Italic ;
+    src: url("../fonts/MontserratFonts/Montserrat-Italic.ttf");
+}
+@font-face{
+    font-family:Montserrat-Light ;
+    src: url("../fonts/MontserratFonts/Montserrat-Light.ttf");
+}
+@font-face{
+    font-family:Montserrat-BoldItalic ;
+    src: url("../fonts/MontserratFonts/Montserrat-BoldItalic.ttf");
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Montserrat-Regular;
+    background-color: #1a1a1a;
+}
+section#header{
+    text-align: center;
+    color: #f2f2f2;
+    background-color: #000000;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Montserrat-Bold;
+}
+
+section#invent-form{
+    padding-top: 60px;
+    font-family: Montserrat-Bold;
+    background-color: #1a1a1a;
+}
+
+section#invent-form .invent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap:2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #333333;
+    padding-top: 50px; 
+}
+
+h4{
+    padding: 0px !important;
+    margin: 0px !important;
+    color: #f2f2f2;
+}
+
+section#invent-form .invent  input{
+    /* min-width: 300px !important; */
+    padding: 10px;
+    border-color: black;
+    outline-color: black;
+    color:    #000000;;
+    font-family: Montserrat-BoldItalic;
+}
+
+section#invent-form .invent input::placeholder{
+    color: #6b6b6b;
+}
+
+section#invent-form .invent > div{
+    margin-bottom: 20px;
+}
+
+/* .d-flex{
+    display: flex;
+    margin-left: 300px;
+    gap: 20px;
+}  */
+
+.d-flex-2{
+    display: flex;
+    color:crimson;
+    margin-top: -5%;
+    margin-left: -10%;
+}
+
+.d-flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+/* 
+.text-center{
+    margin-top: -60px;
+    margin-bottom: 20px;
+    margin-left: 650px;
+    text-align: center;
+}
+.text-center2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+button{
+    padding: 10px 30px;
+    background-color:#1a1a1a;
+    border: none;
+    color: #f2f2f2;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+section#invent-table .table{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding: 20px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #000000;
+    color: #f2f2f2;
+    flex-direction: column; 
+}
+
+a {
+    text-decoration: none;
+    color: #ff6347;
+}
+#actions{
+    margin-bottom: 10px;
+}
+.excName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff; /* Change the text color */
+}
+.excelTitle{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 90px;
+    margin-top: 40px;
+    margin-bottom: -20px;
+}
+#excName-button,#excName-button2 {
+    background-color: #057e0b; /* Change the background color */
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-right: 25px;
+}
+.uploadBtn{
+    background-color: #057e0b;
+    padding: 10px;
+    margin-right: 10px;
+}
+.btn{
+   margin-left: 20%;
+}
+.btn, .clear{
+    padding:0.5rem;
+    background-color: #199e20;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#btn-del{
+    
+    background-color: crimson;
+}
+.clear{
+    background-color: crimson;
+}
+.clear, .print{
+    padding: 10px 20px;
+    font-size: 11px;
+    cursor: pointer;
+}
+.print{
+    background-color: #f2f2f2;
+    color: #0a043c;
+    cursor: pointer;
+}
+
+.font-weight-bold{
+    font-weight: 900;
+}
+
+/* Add media queries for common breakpoints */
+@media only screen and (max-width: 1024px) {
+    /* Add styles for tablets (1024px and below) */
+    section#invent-form .invent {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    /* #egreso-ch{
+        margin-top: 15px;
+    }
+
+    .text-center2{
+        margin-right: -40px;
+        margin-top: 30px
+    } */
+    .titlediv{
+        display: none;
+    }
+
+    .excName {
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #fff; /* Change the text color */
+    }
+    .excelTitle{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-left: 25px;
+        margin-top: 40px;
+        margin-bottom: -20px;
+    }
+    #excName-button,#excName-button2 {
+        font-size: 0.5rem;
+        background-color: #057e0b; /* Change the background color */
+        border: none;
+        color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        margin-left: -5px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* Add styles for small tablets and large phones (768px and below) */
+    section#invent-form .invent {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+/* 
+    .text-center {
+        width: 50%;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: 90px;
+    }
+    .text-center2{
+        margin-right: -40px;
+        margin-top: 30px
+    }
+    .d-flex {
+        margin-left: 50px;
+    }
+    #egreso-txt{
+        margin-left: -80px;
+    } */
+}

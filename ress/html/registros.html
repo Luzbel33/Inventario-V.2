@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../images/icon-stock.png">
+    <title>REGISTRO DE MOVIMIENTOS
+    </title>
+</head>
+<body>
+    <section id="header">
+    <h1>Registro de Movimientos</h1>
+    <h3><a href="../../index.html">Ir a Lista de Inventarios</h3></a>
+    </section>
+    <div class="excelTitle">
+        <h4 class="excName">Hoja de Registros(Enero a Junio)</h4><button id="excName-button">Descargar</button>
+        <h4 class="excName">Hoja de Registros(Julio a Diciembre)</h4><button id="excName-button2">Descargar</button>
+    </div>
+    <section id="invent-form">
+        <div class="invent">
+                <div>
+                    <h4>Movimiento</h4>
+                    <input type="text" placeholder="Concepto" id="product">
+                    
+                </div>
+                
+                <div class="d-flex-2">
+                    <input id="egreso-ch" type="checkbox" onchange="getTotal()"> 
+                    <label id="egreso-txt" for="isTaxable">EGRESO</label>
+                </div>
+
+                <div>
+                    <h4>Monto $</h4> 
+                    <input type="text" value="" placeholder="$ Monto" id="price" onchange="getTotal()"> 
+                </div>
+           
+                <div>
+                    <h4>Cantidad</h4>
+                    <input type="text" value="" placeholder="Cantidad  de Movimientos" id="quantity" onchange="getTotal()">
+                </div>
+
+                <h4>Total</h4>
+                <input type="text" placeholder="0" readonly value="0" id="total">
+
+                <button class="text-center" onclick="addInventory()">Agregar</button>
+        </div>
+    </section>
+
+    <section id="invent-table">
+        <div class="table" >
+            <div class="d-flex-between">
+                <div class="titlediv">
+                    <h1>Registro</h1>
+                </div>
+                <div id="actions">
+                    <span class="uploadBtn">Subir Datos(EXCEL/.CSV):</span>
+                    <input type="file" accept=".csv" id="fileInput">
+                    <input type="submit" value="Subir" onclick="uploadInventory(event)">
+                    <p></p>
+                    <button onclick="downloadInventory()">Descargar Base De Datos(EXCEL/.CSV)</button>
+                    <button id="actions" class="print" onclick="printData()">Descargar PDF-Imprimir</button>
+                    <button id="actions" class="clear" onclick="clearButton()">Borrar Todos</button>
+                </div>
+            </div>
+
+            <div class="table-responsive" id="allInventory">
+                <table width="100%" border="1" id="inventoryTable">
+                    <tr>
+                        <th>Movimiento</th>
+                        <th>Monto $</th>
+                        <th>Cantidad</th>
+                        <th>Total $</th>
+                        <th id="actions">Acciones</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3">
+                            Total Neto $
+                        </th>
+                        <td id="grandTotal" colspan="2" class="font-weight-bold"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html
