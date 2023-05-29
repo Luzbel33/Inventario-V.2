@@ -1,5 +1,3 @@
-
-
 addInventory = () =>{
     let pageUrl = window.location.href;
     let totalInventory = JSON.parse(localStorage.getItem(pageUrl + "_script"));
@@ -197,10 +195,13 @@ downloadInventory = () => {
     let totalInventory = JSON.parse(localStorage.getItem(pageUrl + "_script"));
     let delimiter = ";"; // cambia esto por el caracter delimitador deseado
     let csvContent = "data:text/csv;charset=utf-8,";
-    csvContent += "Producto" + delimiter + "Vencimiento" + delimiter + "Stock Inicial" + delimiter + "Precio Costo" + delimiter + "Precio Venta" + delimiter + "Vendidos" + delimiter + "Ganancia" + delimiter + "Stock Final" + "\n";
+    csvContent += "Producto" + delimiter + "Vencimiento" + delimiter + "Stock Inicial" + delimiter + "Precio Costo" + delimiter + "Precio Venta" + delimiter + "Vendidos" + delimiter + "Ganancia" + delimiter + "Stock Final"  + "\n";
+    let grandTotal = 0;
     totalInventory.forEach(function(row) {
         csvContent += row.product + delimiter + row.venc + delimiter + row.stock + delimiter + row.cost + delimiter + row.sellPrice + delimiter + row.sold + delimiter + row.profit + delimiter + row.finalStock + "\n";
+        grandTotal += parseFloat(row.profit);
     });
+    csvContent += "Ganancia Total" + delimiter + delimiter + delimiter + "$" + grandTotal.toFixed(2) + "\n"; // add grand total to CSV
     let encodedUri = encodeURI(csvContent);
     let link = document.createElement("a");
     let today = new Date();
@@ -257,10 +258,10 @@ getDate = () => {
 
 printData = () => { 
     let divContents = document.getElementById("allInventory").cloneNode(true);
-    let actions = divContents.querySelectorAll("#actions");
+    let actions = divContents.querySelectorAll(".notshow");
     for (let i = 0; i < actions.length; i++) {
         actions[i].remove();
-    }
+    }   
     let buttons = divContents.querySelectorAll(".btn");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].remove();
